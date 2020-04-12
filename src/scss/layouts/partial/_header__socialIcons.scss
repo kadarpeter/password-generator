@@ -1,0 +1,27 @@
+// >> Header Social Icons Style --- >
+.socialIcons{
+    @include flex();
+    padding: 4px 0 4px 16px;
+    border-left: 1px solid $ka-brand-1;
+    %socialIcons__item{
+        display: block;
+        width: 16px;
+        height: 16px;
+        &:hover svg{
+            fill: $ka-brand-3;
+        }
+        svg{
+            @include transition(fill, linear, 0.3s);
+            fill: $ka-brand-1;
+        }
+    }
+    @include e(item){
+        @include m(fb){
+            @extend %socialIcons__item;
+            margin-right: 8px;
+        }
+        @include m(insta){
+            @extend %socialIcons__item;
+        }
+    }
+}

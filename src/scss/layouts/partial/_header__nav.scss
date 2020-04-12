@@ -1,0 +1,30 @@
+// >> Header Nav Style --- >
+.header__nav{
+    @include mq($max--ipad-land){
+        padding-right: 16px;
+    }
+}
+.toggleMenu{
+    @include mq($max--ipad-land){
+        @include flex();
+    }
+}
+.toggleMenu__item{
+    @include mq($max--ipad-land){
+        &:last-child a{
+            padding: 0;
+        }
+    }
+    a{
+        @include mq($max--ipad-land){
+            @include transition(color, linear, 0.3s);
+            padding: 0 24px 0 0;
+            color: $ka-brand-2;
+            font-weight: 400;
+            text-transform: uppercase;
+            &:hover{
+                color: $ka-brand-3;
+            }
+        }
+    }
+}

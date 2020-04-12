@@ -1,0 +1,61 @@
+* { position: relative; box-sizing: border-box; -moz-box-sizing: border-box; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, img, ins, kbd, q, s, samp, small, strike, sub, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, menu, nav, output, ruby, section, summary, time, mark, audio, video { margin: 0; padding: 0; border: 0; font-size: 100%; font-style: inherit; line-height: 1; vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section { display: block; }
+
+ol, ul { list-style: none; margin: 0; padding: 0; }
+
+blockquote, q { quotes: none; padding-left: 1em; font-size: 1.125rem; font-style: italic; line-height: 1.43; }
+
+table { border-collapse: collapse; border-spacing: 0; }
+
+code { font-family: monospace; line-height: 1.43; padding: 0.25rem 0.5rem; border-radius: 3px; background: rgba(0, 0, 0, 0.75); color: white; }
+
+b, strong { font-weight: bold; }
+
+img { display: block; width: 100%; margin: 0; padding: 0; border: none; outline: none; }
+
+a { outline: none; text-decoration: none; }
+
+body { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; height: 100vh; background: rgba(0, 0, 0, 0.75); font-family: 'Montserrat', sans-serif; }
+body, body * { line-height: 1.42857; }
+
+.pageWrapper { display: -ms-flexbox; display: flex; justify-content: center; align-items: center; width: 100%; height: 100%; }
+
+.contentWrapper { width: 90%; max-width: 360px; flex-basis: 90%; margin: 0 auto; background: white; }
+
+#app { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; width: 90%; max-width: 520px; flex-basis: 90%; flex-wrap: wrap; margin: 0; padding: 24px; border-radius: 4px; background: white; box-shadow: 5px 5px 0 rgba(255, 255, 255, 0.45); }
+
+.formItem--password .passwordStrength { position: absolute; left: 0; bottom: -2px; width: 0; height: 4px; background-color: transparent; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px; }
+
+.formItem--password { width: 100%; margin: 0; padding: 0; }
+.formItem--password .formItem__title { display: block; font-weight: 600; }
+.formItem--password .formItem__note { color: rgba(0, 0, 0, 0.75); font-size: 0.75rem; }
+.formItem--password .passwordStrength { -webkit-transition: all linear 0.25s; -moz-transition: all linear 0.25s; -ms-transition: all linear 0.25s; -o-transition: all linear 0.25s; transition: all linear 0.25s; }
+.formItem--password .passwordStrength.str_1 { width: 20%; background-color: #ea6153; }
+.formItem--password .passwordStrength.str_2 { width: 40%; background-color: #e98b39; }
+.formItem--password .passwordStrength.str_3 { width: 60%; background-color: #f2ca27; }
+.formItem--password .passwordStrength.str_4 { width: 80%; background-color: #40d47e; }
+.formItem--password .passwordStrength.str_5 { width: 100%; background-color: #27ae60; }
+.formItem--password .inputWrapper { display: -ms-flexbox; display: flex; justify-content: flex-start; align-items: stretch; margin: 8px 0 12px; padding: 0; border: 1px solid #dddddd; border-radius: 3px; background: white; }
+.formItem--password .inputWrapper .showPassword { width: 36px; max-width: 36px; flex-basis: 36px; height: 36px; cursor: pointer; }
+.formItem--password .inputWrapper .showPassword.hidden:before { background: url("../assets/visibility_off-24px.svg") no-repeat center center/20px; opacity: .75; }
+.formItem--password .inputWrapper .showPassword:before { -webkit-transition: background ease-in-out 0.15s; -moz-transition: background ease-in-out 0.15s; -ms-transition: background ease-in-out 0.15s; -o-transition: background ease-in-out 0.15s; transition: background ease-in-out 0.15s; display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: url("../assets/visibility-24px.svg") no-repeat center center/20px; content: ''; }
+.formItem--password .inputWrapper input { width: calc(100% - 72px); max-width: calc(100% - 72px); flex-basis: calc(100% - 72px); -webkit-appearance: none; -moz-appearance: none; appearance: none; padding: 0 8px; outline: none; border: none; color: black; font-size: 1rem; }
+.formItem--password .inputWrapper input::placeholder { color: rgba(0, 0, 0, 0.75); font-family: 'Montserrat', sans-serif; }
+.formItem--password .inputWrapper .copyPassword { width: 36px; max-width: 36px; flex-basis: 36px; height: 36px; background: rgba(0, 0, 0, 0.05); cursor: pointer; }
+.formItem--password .inputWrapper .copyPassword:before { display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: url("../assets/copy-24px.svg") no-repeat center center/18px; content: ''; opacity: .75; }
+.formItem--password .formItem__alert { color: #ea6153; font-size: 0.875rem; }
+.formItem--password .formItem__bottom { display: -ms-flexbox; display: flex; justify-content: space-between; align-items: center; margin: 20px 0 0; }
+.formItem--password .formItem__bottom .passwordCounter { display: block; width: 36px; height: 30px; border: 1px solid #dddddd; border-radius: 3px; background: rgba(0, 0, 0, 0.05); font-size: 0.75rem; text-align: center; line-height: 30px; }
+.formItem--password .formItem__bottom .passwordCounter span { display: block; position: absolute; top: calc(50% - 12px); right: -20px; width: 24px; height: 24px; background: url("../assets/more-24px.svg") no-repeat center center/24px; content: ''; }
+.formItem--password .formItem__bottom .btnWrapper { display: -ms-flexbox; display: flex; justify-content: flex-end; align-items: stretch; }
+.formItem--password .formItem__bottom .btnWrapper .btn--delPassword { -webkit-appearance: none; -moz-appearance: none; appearance: none; width: 36px; height: 36px; margin: 0 8px 0 0; padding: 0; background: rgba(0, 0, 0, 0.05); border: 1px solid #dddddd; border-radius: 3px; line-height: 36px; cursor: pointer; content: ''; }
+.formItem--password .formItem__bottom .btnWrapper .btn--delPassword:before { display: block; position: absolute; top: 0; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; background: url("../assets/clear-24px.svg") no-repeat center center/18px; content: ''; opacity: .75; }
+.formItem--password .formItem__bottom .btnWrapper .btn--generatePassword { -webkit-appearance: none; -moz-appearance: none; appearance: none; margin: 0; padding: 0 20px; background: #2980b9; border-radius: 3px; color: white; line-height: 36px; cursor: pointer; }
+
+.formItem--submit { display: -ms-flexbox; display: flex; justify-content: center; align-items: stretch; position: absolute; left: 0; right: 0; bottom: -56px; }
+.formItem--submit .btn--submit { -webkit-appearance: none; -moz-appearance: none; appearance: none; margin: 0 auto; padding: 0 20px; border: none; border-radius: 3px; background: #9b59b6; color: white; font-family: 'Montserrat', sans-serif; font-size: 1rem; line-height: 36px; outline: none; cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */

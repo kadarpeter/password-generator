@@ -1,0 +1,26 @@
+// >> Buttons Style --- >
+
+// Btn Base Style
+%baseButton{
+    display: block;
+    padding: 15px 46px;
+    border-radius: 25px;
+    background: $ka-brand-3;
+    color: white;
+    font-size: rem(16px);
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.btnWrapper{
+    @include flex();
+    width: 100%;
+    margin: 24px 0 0;
+}
+.btn--call{
+    @extend %baseButton;
+    margin-right: 8px;
+}
+.btn--mail{
+    @extend %baseButton;
+}
