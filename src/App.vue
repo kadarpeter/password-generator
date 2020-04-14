@@ -32,6 +32,38 @@
 
 <script>
 
+// Random karakter választó egy adott string-ből
+String.prototype.pick = function(min, max) {
+    var n, chars = '';
+
+    if (typeof max === 'undefined') {
+        n = min;
+    } else {
+        n = min + Math.floor(Math.random() * (max - min));
+    }
+
+    for (var i = 0; i < n; i++) {
+        chars += this.charAt(Math.floor(Math.random() * this.length));
+    }
+
+    return chars;
+};
+
+// String karaktereinek összekeverése
+String.prototype.shuffle = function() {
+    var array = this.split('');
+    var tmp, current, top = array.length;
+
+    if (top) while (--top) {
+        current = Math.floor(Math.random() * (top + 1));
+        tmp = array[current];
+        array[current] = array[top];
+        array[top] = tmp;
+    }
+
+    return array.join('');
+};
+
 export default {
     name: 'App',
     data() {
@@ -104,12 +136,13 @@ export default {
             for (var j = 0; j < this.rules.length; j++) {
                 if (this.rules[j].checked) {
                     allowedCharacter += this.rules[j].character;
+                    result += this.rules[j].character.pick(1, 2);
                 }
             }
             for ( var i = 0; i < this.passwordLength[0].minLength; i++ ) {
-                result += allowedCharacter.charAt(Math.floor(Math.random() * allowedCharacter.length));
+                result += allowedCharacter.pick(4,8);
             }
-            this.password = result;
+            this.password = result.shuffle();
             this.show = true;
         },
         // Clear Input Value
